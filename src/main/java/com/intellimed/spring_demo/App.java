@@ -17,7 +17,7 @@ public class App {
 		
 		triangle.draw();
 		
-		System.out.println("Done drawing a triangle");
+		System.out.println("Done drawing a triangle!");
 		
 	}
 }
