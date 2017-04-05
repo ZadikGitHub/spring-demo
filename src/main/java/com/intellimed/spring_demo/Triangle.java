@@ -2,7 +2,10 @@ package com.intellimed.spring_demo;
 
 import java.util.List;
 
-public class Triangle {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Triangle implements InitializingBean, DisposableBean{
 	
 	public Triangle(String type){
 		this.type=type;
@@ -32,4 +35,25 @@ public class Triangle {
 		System.out.println(getType() + " triangle is drawn! The coordinates are " + getPoints());
 	}
 
+
+
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("InitializingBean afterPropertiesSet method called!");		
+		
+	}
+
+	
+	public void destroy() throws Exception {
+		System.out.println("DisposableBean destroy method called!");		
+	}
+	
+	public void myInit(){
+			System.out.println("MyInit  method called!");		
+	}
+	
+	public void myDestroy(){
+		System.out.println("MyDestroy  method called!");		
+}
+		
+	
 }
