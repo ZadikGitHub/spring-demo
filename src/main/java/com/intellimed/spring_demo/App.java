@@ -15,9 +15,15 @@ public class App {
 		
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
-		Triangle triangle = (Triangle) context.getBean("triangle");
+		Shape shape = (Shape) context.getBean("circle");
 		
-		triangle.draw();
+		shape.draw();
+		
+		
+		shape = (Shape) context.getBean("triangle");
+		shape.draw();
+		
+		System.out.println(context.getMessage("greeting", null, "Default Hi Message", null));
 				
 	}
 }
